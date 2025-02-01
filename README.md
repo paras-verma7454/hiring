@@ -30,7 +30,7 @@ Ensure you have the following installed:
    - Create a `.env` file in the root directory
    - Add the following:
      ```env
-     MONGODB_URI=your_mongodb_connection_string
+     DB_URL=your_mongodb_connection_string
      ```
 4. Start the server:
    ```sh
