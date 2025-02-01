@@ -9,6 +9,9 @@ This is a simple FAQ backend system built using Node.js, Express, and MongoDB. T
 - Add new FAQs
 - Supports translation via an external API
 
+## Deployment
+The backend is deployed on ```https://faqs-zdpc.onrender.com``` . You can use this instead of `localhost:3000`. However, the first request might be slow due to free instances on Render.
+
 ## Installation
 
 ### Prerequisites
@@ -30,7 +33,8 @@ Ensure you have the following installed:
    - Create a `.env` file in the root directory
    - Add the following:
      ```env
-     DB_URL=your_mongodb_connection_string
+     MONGODB_URI=your_mongodb_connection_string
+     PORT=3000
      ```
 4. Start the server:
    ```sh
@@ -46,12 +50,10 @@ Ensure you have the following installed:
 **Optional Query Parameter:**
 - `lang` (default: `en`) - Specify the target language for translation.
 
-
 **Example Request:**
 ```sh
-curl -X GET "http://localhost:3000/api/faqs?lang=fr"
+curl -X GET "https://faqs-zdpc.onrender.com/api/faqs?lang=fr"
 ```
-![image](https://github.com/user-attachments/assets/4384921d-83db-4285-85c7-bf7e0b0ee214)
 
 **Example Response:**
 ```json
@@ -69,7 +71,7 @@ curl -X GET "http://localhost:3000/api/faqs?lang=fr"
 
 **Example Request:**
 ```sh
-curl -X GET "http://localhost:3000/api/faqs/65a123456789"
+curl -X GET "https://faqs-zdpc.onrender.com/api/faqs/65a123456789"
 ```
 
 **Example Response:**
@@ -94,7 +96,7 @@ curl -X GET "http://localhost:3000/api/faqs/65a123456789"
 
 **Example Request:**
 ```sh
-curl -X POST "http://localhost:3000/api/faqs" \
+curl -X POST "https://faqs-zdpc.onrender.com/api/faqs" \
   -H "Content-Type: application/json" \
   -d '{"question": "How do I reset my password?", "answer": "Click on Forgot Password and follow the instructions."}'
 ```
@@ -107,6 +109,9 @@ curl -X POST "http://localhost:3000/api/faqs" \
   "answer": "Click on 'Forgot Password' and follow the instructions."
 }
 ```
+
+## Translation API
+I used an open-source repository written in Go for translation instead of Google Translate API because Google’s service is paid.
 
 ## Contribution Guidelines
 
