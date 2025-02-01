@@ -51,6 +51,7 @@ Ensure you have the following installed:
 ```sh
 curl -X GET "http://localhost:3000/api/faqs?lang=fr"
 ```
+![image](https://github.com/user-attachments/assets/4384921d-83db-4285-85c7-bf7e0b0ee214)
 
 **Example Response:**
 ```json
