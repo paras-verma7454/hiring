@@ -13,10 +13,12 @@ const FAQSchema = zod.object({
 router.get('/', async (req, res) => {
     try {
         const faqs = await FAQ.find();
-        console.log(faqs);
 
         const targetLang = req.query.lang || 'en';
-
+        if (targetLang === 'en') {
+            res.json(faqs);
+            return;
+        }
         const translatedFaqs = await Promise.all(faqs.map(async (faq) => {
             try {
                 const questionResponse = await axios.post('https://free-translate-go-api.onrender.com/translate', {
