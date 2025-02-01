@@ -4,7 +4,8 @@
   "description": "Welcome to the [BharatFD](https://bharatfd.com) **Hiring Repository**. This repository contains test assignments for backend and frontend developers.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",

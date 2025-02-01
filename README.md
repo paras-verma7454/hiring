@@ -46,6 +46,7 @@ Ensure you have the following installed:
 **Optional Query Parameter:**
 - `lang` (default: `en`) - Specify the target language for translation.
 
+
 **Example Request:**
 ```sh
 curl -X GET "http://localhost:3000/api/faqs?lang=fr"
