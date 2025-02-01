@@ -10,7 +10,7 @@ This is a simple FAQ backend system built using Node.js, Express, and MongoDB. T
 - Supports translation via an external API
 
 ## Deployment
-The backend is deployed on ```https://faqs-zdpc.onrender.com``` . You can use this instead of `localhost:3000`. However, the first request might be slow due to free instances on Render.
+The backend is deployed on ```https://faqs-zdpc.onrender.com/api/faqs```. You can use this instead of cloning the repo. However, the first request might be slow due to free instances on Render.
 
 ## Installation
 
@@ -33,8 +33,7 @@ Ensure you have the following installed:
    - Create a `.env` file in the root directory
    - Add the following:
      ```env
-     MONGODB_URI=your_mongodb_connection_string
-     PORT=3000
+     DB_URL=your_mongodb_connection_string
      ```
 4. Start the server:
    ```sh
@@ -47,6 +46,9 @@ Ensure you have the following installed:
 ### Get All FAQs
 **Endpoint:** `GET /api/faqs`
 
+![image](https://github.com/user-attachments/assets/cef3c647-2301-4157-bfc8-8c83a8d95e26)
+
+
 **Optional Query Parameter:**
 - `lang` (default: `en`) - Specify the target language for translation.
 
@@ -54,6 +56,9 @@ Ensure you have the following installed:
 ```sh
 curl -X GET "https://faqs-zdpc.onrender.com/api/faqs?lang=fr"
 ```
+
+![image](https://github.com/user-attachments/assets/912e3ba3-d92b-44f8-9703-27df06913a59)
+
 
 **Example Response:**
 ```json
@@ -71,7 +76,7 @@ curl -X GET "https://faqs-zdpc.onrender.com/api/faqs?lang=fr"
 
 **Example Request:**
 ```sh
-curl -X GET "https://faqs-zdpc.onrender.com/api/faqs/65a123456789"
+curl -X GET "http://localhost:3000/api/faqs/65a123456789"
 ```
 
 **Example Response:**
@@ -96,7 +101,7 @@ curl -X GET "https://faqs-zdpc.onrender.com/api/faqs/65a123456789"
 
 **Example Request:**
 ```sh
-curl -X POST "https://faqs-zdpc.onrender.com/api/faqs" \
+curl -X POST "http://localhost:3000/api/faqs" \
   -H "Content-Type: application/json" \
   -d '{"question": "How do I reset my password?", "answer": "Click on Forgot Password and follow the instructions."}'
 ```
